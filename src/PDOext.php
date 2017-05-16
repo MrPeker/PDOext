@@ -15,9 +15,7 @@ class PDOext extends \PDO
     */
     public function __construct($host, $db, $name, $password, $charset = 'utf8')
     {
-        parent::__construct('mysql:host=' . $host . ';dbname=' . $db, $name, $password);
-        $this->query("SET CHARACTER SET utf8");
-        $this->query("SET NAMES utf8");
+        parent::__construct('mysql:host=' . $host . ';dbname=' . $db . ';charset=' . $charset, $name, $password);
     }
     /*
      * Select sınıfı::
